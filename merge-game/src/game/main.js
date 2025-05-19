@@ -1,7 +1,8 @@
 import Phaser from 'phaser';
 import FruitCatchScene from './FruitCatchScene.js';
 import FruitCatchOver from './FruitCatchOver.js';
-// import TetrisScene, TetrisFruitCatchOver when added
+import SnakeScene from './SnakeScene.js';
+import SnakeGameOver from './SnakeGameOver.js';
 
 export function createGame(containerId, gameKey) {
   let scenes;
@@ -9,9 +10,9 @@ export function createGame(containerId, gameKey) {
     case 'fruit-catch':
       scenes = [FruitCatchScene, FruitCatchOver];
       break;
-    // case 'tetris':
-    //   scenes = [TetrisScene, TetrisFruitCatchOver];
-    //   break;
+    case 'snake':
+      scenes = [SnakeScene, SnakeGameOver];
+      break;
     default:
       scenes = [FruitCatchScene, FruitCatchOver];
   }
@@ -24,7 +25,7 @@ export function createGame(containerId, gameKey) {
     physics: {
       default: 'arcade',
       arcade: {
-        gravity: { y: 800 },
+        gravity: { y: 0 },
         debug: false
       }
     },

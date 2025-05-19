@@ -3,7 +3,8 @@ import Phaser from 'phaser';
 export default class FruitCatchScene extends Phaser.Scene {
   constructor() {
     super({ key: 'FruitCatchScene' });
-    this.types = ['apple', 'peach'];       
+    this.types = ['apple', 'peach'];      
+    this.physics.gravity.y = 800; 
     this.endLineY = 150;                   
     this.radiusMap = { apple: 40, peach: 70, melon: 120 };
     this.pushForce = 100;

@@ -2,6 +2,7 @@ import React from 'react';
 
 const games = [
   { key: 'fruit-catch', name: 'Fruit Catch' },
+  { key: 'snake',       name: 'Snake' },
   // future games:
   // { key: 'tetris', name: 'Tetris' },
   // { key: 'snake',  name: 'Snake'  },
