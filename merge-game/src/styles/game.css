@@ -1,0 +1,27 @@
+.game-screen {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+
+  /* yellow base */
+  background-color: yellow;
+
+  /* translucent photo overlay */
+  background-image: url('/assets/background.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 1;
+  /* blend the image with the yellow background */
+  background-blend-mode: overlay;
+}
+
+.game-screen .phaser-canvas {
+  position: relative;
+  z-index: 1;
+}
+
+/* Snake-specific: add border */
+.game-screen.snake {
+  border: 8px solid #333;
+}

@@ -8,6 +8,8 @@ export default class SnakeScene extends Phaser.Scene {
     this.score = 0;
   }
 
+  
+
   create() {
     const { width, height } = this.scale;
     this.gridWidth = Math.floor(width / this.cellSize);
