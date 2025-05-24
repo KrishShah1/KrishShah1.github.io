@@ -27,7 +27,7 @@ export default class SnakeScene extends Phaser.Scene {
       0xFFFFE0, // top-right
       0x800080, // bottom-left (purple)
       0x800080, // bottom-right
-      1          // alpha
+      1       // alpha
     )
     .fillRect(0, 0, width, height);
     this.foodGraphics = this.add.graphics({ fillStyle: { color: 0xff0000 } });
