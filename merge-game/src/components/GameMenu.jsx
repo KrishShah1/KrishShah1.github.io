@@ -22,7 +22,7 @@ export default function GameMenu({ onSelect }) {
         background: '#111'
       }}
     >
-      <h1 style={{ color: '#fff' }}>Select a Game</h1>
+      <h1 style={{ color: '#fff' }}>Hi Shroo!! Let's play some games!</h1>
       {games.map(game => (
         <button
           key={game.key}

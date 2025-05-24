@@ -8,7 +8,6 @@ export default class SnakeScene extends Phaser.Scene {
     this.score = 0;
   }
 
-  
 
   create() {
     const { width, height } = this.scale;
@@ -22,7 +21,15 @@ export default class SnakeScene extends Phaser.Scene {
     const startY = Math.floor(this.gridHeight / 2);
     this.snake = [{ x: startX, y: startY }];
 
-    this.graphics = this.add.graphics({ fillStyle: { color: 0x00ff00 } });
+    this.graphics = this.add.graphics()
+    .fillGradientStyle(
+      0xFFFFE0, // top-left (light yellow)
+      0xFFFFE0, // top-right
+      0x800080, // bottom-left (purple)
+      0x800080, // bottom-right
+      1          // alpha
+    )
+    .fillRect(0, 0, width, height);
     this.foodGraphics = this.add.graphics({ fillStyle: { color: 0xff0000 } });
 
     this.spawnFood();
