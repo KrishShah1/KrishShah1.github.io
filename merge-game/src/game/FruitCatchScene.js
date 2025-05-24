@@ -3,9 +3,9 @@ import Phaser from 'phaser';
 export default class FruitCatchScene extends Phaser.Scene {
   constructor() {
     super({ key: 'FruitCatchScene' });
-    this.types = ['apple', 'peach'];       
+    this.types = ['krish1', 'shroo1'];       
     this.endLineY = 150;                   
-    this.radiusMap = { apple: 40, peach: 70, melon: 120 };
+    this.radiusMap = { krish1: 40, shroo1: 60, krish2: 80, shroo2: 100,  krish3: 120 };
     this.pushForce = 100;
   }
   
@@ -21,9 +21,11 @@ export default class FruitCatchScene extends Phaser.Scene {
   }
   
   preload() {
-    this.load.image('apple', 'assets/apple.png');
-    this.load.image('peach', 'assets/peach.png');
-    this.load.image('melon', 'assets/watermelon.png');
+    this.load.image('krish1', 'assets/krish1.png');
+    this.load.image('shroo1', 'assets/shroo1.png');
+    this.load.image('krish2', 'assets/krish2.png');
+    this.load.image('shroo2', 'assets/shroo2.png');
+    this.load.image('krish3', 'assets/krish3.png');
   }
   
   create() {
@@ -129,8 +131,10 @@ export default class FruitCatchScene extends Phaser.Scene {
   handleCollision(a, b) {
     const key = a.texture.key;
     let nextKey, pts;
-    if      (key === 'apple') { nextKey = 'peach'; pts = 5; }
-    else if (key === 'peach') { nextKey = 'melon'; pts = 10; }
+    if      (key === 'krish1') { nextKey = 'shroo1'; pts = 5; }
+    else if (key === 'shroo1') { nextKey = 'krish2'; pts = 10; }
+    else if (key === 'krish2') { nextKey = 'shroo2'; pts = 15; }
+    else if (key === 'shroo2') { nextKey = 'krish3'; pts = 20; }
     else { return; }
     
     const winner = Phaser.Math.RND.pick([a, b]);
