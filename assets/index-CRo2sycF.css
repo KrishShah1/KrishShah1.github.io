@@ -1,0 +1,1 @@
+.game-screen{position:relative;width:100vw;height:100vh;background-color:#ff0;background-image:url(/assets/background.jpg);background-size:cover;background-position:center;background-repeat:no-repeat;opacity:1;background-blend-mode:overlay}.game-screen .phaser-canvas{position:relative;z-index:1}.game-screen.snake{border:8px solid #333}
