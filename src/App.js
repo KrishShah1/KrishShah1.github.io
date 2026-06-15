@@ -1,25 +1,23 @@
 import React from 'react';
 import NavBar from './components/NavBar';
-import HeroSection from './components/HeroSection';
-import About from './components/About';
-import Education from './components/Education';
+import Hero from './components/HeroSection';
 import Experience from './components/Experience';
-import Extracurriculars from './components/Extracurriculars';
+import Education from './components/Education';
+import Projects from './components/Projects';
 import Footer from './components/Footer';
 import './App.css';
 
-const App = () => {
+export default function App() {
   return (
-    <div style={{ overflowY: 'auto' }}>
+    <>
       <NavBar />
-      <HeroSection />
-      <About />
-      <Education />
-      <Experience />
-      <Extracurriculars />
+      <main>
+        <Hero />
+        <Experience />
+        <Education />
+        <Projects />
+      </main>
       <Footer />
-    </div>
+    </>
   );
 }
-
-export default App;

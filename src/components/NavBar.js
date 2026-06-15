@@ -1,31 +1,19 @@
 import React from 'react';
-import { Navbar, Nav } from 'react-bootstrap';
 
-const NavBar = () => {
-  const scrollToSection = (sectionId) => {
-    const section = document.getElementById(sectionId);
-    const offset = -100; 
-    window.scrollTo({
-      top: section.offsetTop + offset,
-      behavior: 'smooth'
-    });
+export default function NavBar() {
+  const scroll = (id) => {
+    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
   };
-
   return (
-    <Navbar bg="dark" variant="dark" expand="lg" fixed="top">
-      <Navbar.Brand href="#home" className="navbar-brand-custom mx-auto">My Portfolio</Navbar.Brand>
-      <Navbar.Toggle aria-controls="basic-navbar-nav" />
-      <Navbar.Collapse id="basic-navbar-nav" className="justify-content-center text-center">
-        <Nav className="mx-auto">
-          <Nav.Link onClick={() => scrollToSection('hero')}>Home</Nav.Link>
-          <Nav.Link onClick={() => scrollToSection('about')}>About</Nav.Link>
-          <Nav.Link onClick={() => scrollToSection('education')}>Education</Nav.Link>
-          <Nav.Link onClick={() => scrollToSection('experience')}>Experience</Nav.Link>
-          <Nav.Link onClick={() => scrollToSection('extracurriculars')}>Extracurriculars</Nav.Link>
-        </Nav>
-      </Navbar.Collapse>
-    </Navbar>
+    <nav>
+      <div className="nav-inner">
+        <a href="#hero" className="nav-brand">Krish Shah</a>
+        <ul className="nav-links">
+          <li><a href="#experience" onClick={e => { e.preventDefault(); scroll('experience'); }}>experience</a></li>
+          <li><a href="#education"  onClick={e => { e.preventDefault(); scroll('education');  }}>education</a></li>
+          <li><a href="#projects"   onClick={e => { e.preventDefault(); scroll('projects');   }}>projects</a></li>
+        </ul>
+      </div>
+    </nav>
   );
 }
-
-export default NavBar;

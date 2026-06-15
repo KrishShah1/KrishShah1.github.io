@@ -1,71 +1,35 @@
-import React, { useEffect, useRef } from 'react';
-import { Container } from 'react-bootstrap';
-import pic from './pic.png'; // Adjust the import path if necessary
+import React from 'react';
+import pic from './pic.png';
 
-const HeroSection = () => {
-  const h1Ref = useRef(null);
-  const pRef = useRef(null);
-
-  useEffect(() => {
-    const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-
-    const handleMouseOver = (event, speed) => {
-      let iteration = 0;
-      clearInterval(event.target.interval);
-
-      event.target.interval = setInterval(() => {
-        event.target.innerText = event.target.innerText
-          .split("")
-          .map((letter, index) => {
-            if(index < iteration) {
-              return event.target.dataset.value[index];
-            }
-            return letters[Math.floor(Math.random() * 26)];
-          })
-          .join("");
-
-        if(iteration >= event.target.dataset.value.length){ 
-          clearInterval(event.target.interval);
-        }
-
-        iteration += 1 / 4;
-      }, speed);
-    };
-
-    const h1Element = h1Ref.current;
-    const pElement = pRef.current;
-
-    const h1MouseOverEvent = new Event('mouseover');
-    const pMouseOverEvent = new Event('mouseover');
-
-    h1Element.addEventListener('mouseover', (event) => handleMouseOver(event, 30));
-        pElement.addEventListener('mouseover', (event) => handleMouseOver(event, 20));
-
-    h1Element.dispatchEvent(h1MouseOverEvent);
-    pElement.dispatchEvent(pMouseOverEvent);
-
-
-    return () => {
-      h1Element.removeEventListener('mouseover', (event) => handleMouseOver(event, 30));
-      pElement.removeEventListener('mouseover', (event) => handleMouseOver(event, 20));
-      clearInterval(h1Element.interval);
-      clearInterval(pElement.interval);
-    };
-  }, []);
-
+export default function Hero() {
   return (
-    <div className="hero-section" id="hero">
-      <Container className="hero-content">
-        <h1 ref={h1Ref} data-value="KRISH SHAH">KRISH SHAH</h1>
-        <p ref={pRef} data-value="SOFTWARE ENGINEER">SOFTWARE ENGINEER</p>
-        <img
-          src={pic} 
-          alt="Krish Shah" 
-          className="hero-image"
-        />
-      </Container>
-    </div>
+    <section className="hero" id="hero">
+      <div>
+        <p className="hero-eyebrow">Software Engineer</p>
+        <h1 className="hero-name">Krish Shah</h1>
+        <p className="hero-bio">
+          UCR Computer Engineering. I build web apps, embedded systems, and things I care about.
+          Into rock climbing, basketball, and music theory.
+        </p>
+        <div className="hero-links">
+          <a
+            className="pill pill-primary"
+            href="https://drive.google.com/file/d/1cyW_fODP9ZvWAWOqsSJ5bT2n46ym_2x_/view?usp=sharing"
+            target="_blank" rel="noopener noreferrer"
+          >Resume</a>
+          <a
+            className="pill pill-secondary"
+            href="https://www.linkedin.com/in/krishshah273/"
+            target="_blank" rel="noopener noreferrer"
+          >LinkedIn</a>
+          <a
+            className="pill pill-secondary"
+            href="https://github.com/KrishShah1"
+            target="_blank" rel="noopener noreferrer"
+          >GitHub</a>
+        </div>
+      </div>
+      <img src={pic} alt="Krish Shah" className="hero-photo" />
+    </section>
   );
 }
-
-export default HeroSection;
