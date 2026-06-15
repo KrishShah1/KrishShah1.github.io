@@ -1,0 +1,189 @@
+body {
+  padding-top: 56px; 
+  padding-bottom: 56px;
+  margin: 0;
+  background: linear-gradient(to bottom right, #e66465, #9198e5);
+  background-attachment: fixed;
+}
+
+.navbar-nav {
+  margin: 0 auto ;
+}
+
+.navbar {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.navbar-brand-custom {
+  padding-left: 16px; 
+  padding-right: 16px;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: #343a40;
+  color: white;
+  text-align: center;
+  padding: 1rem 0;
+}
+
+.hero-section {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: linear-gradient(to bottom right, #0a9305, #50aeda);
+  color: white;
+}
+
+.hero-content h1 {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+  animation: fadeIn 2s ease-in-out;
+}
+
+.hero-content p {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  animation: fadeIn 3s ease-in-out;
+}
+
+.hero-image {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  transition: transform 0.3s ease-in-out;
+}
+
+.hero-image:hover {
+  transform: scale(1.3);
+}
+
+
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.about-section {
+  padding: 4rem 1rem;
+  text-align: center;
+  background-color: #f8f9fa;
+  opacity: 0; 
+  transform: translateY(20px);
+  transition: opacity 3s ease-out, transform 0.3s ease-out;
+}
+
+.about-section.fade-in {
+  opacity: 1;
+  transform: translateY(0); 
+}
+
+.about-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.about-section p {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+#about:hover {
+  transform: scale(1.1); 
+}
+
+#education {
+  padding: 4rem 3rem;
+  background-color: #f8f9fa;
+  border-radius: 10px;
+  transition: transform 0.3s ease-in-out;
+}
+
+#education:hover {
+  transform: scale(1.1); 
+}
+
+#education h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+#education h4 {
+  font-size: 1.8rem;
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+#education p {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+
+#extracurriculars {
+  padding: 4rem 3rem;
+  background-color: #f8f9fa;
+  border-radius: 10px;
+  transition: transform 0.3s ease-in-out;
+}
+
+#extracurriculars:hover {
+  transform: scale(1.1); 
+}
+
+#extracurriculars h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+#extracurriculars h4 {
+  font-size: 1.8rem;
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+#extracurriculars p {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+#experience {
+  padding: 4rem 3rem;
+  background-color: #f8f9fa;
+  border-radius: 10px;
+  transition: transform 0.3s ease-in-out;
+}
+
+#experience:hover {
+  transform: scale(1.1); 
+}
+
+#experience h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+#experience h4 {
+  font-size: 1.8rem;
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+#experience p {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+

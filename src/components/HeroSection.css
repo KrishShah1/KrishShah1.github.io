@@ -1,0 +1,40 @@
+body {
+  display: grid;
+  place-items: center;
+  height: 100vh;
+  background-color: black;
+  margin: 0;
+  overflow: hidden;
+}
+
+.hero-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: black;
+}
+
+.hero-content {
+  text-align: center;
+  color: white;
+}
+
+.hero-image {
+  border-radius: 50%;
+  margin-top: 20px;
+}
+
+h1 {
+  font-family: 'Space Mono', monospace;
+  font-size: clamp(3rem, 10vw, 10rem);
+  color: white;
+  padding: 0 clamp(1rem, 2vw, 3rem);
+  border-radius: clamp(0.4rem, 0.75vw, 1rem);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+h1:hover {
+  background-color: white;
+  color: black;
+}
