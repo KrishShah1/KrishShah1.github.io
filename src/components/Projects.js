@@ -45,25 +45,38 @@ const projects = [
   },
 ];
 
-export default function Projects() {
+export default function Projects({ unlocked }) {
   return (
     <section className="section" id="projects">
       <p className="section-label">Projects</p>
-      <div className="projects-grid">
-        {projects.map((p) => {
-          const Tag = p.url ? 'a' : 'div';
-          const props = p.url
-            ? { href: p.url, target: '_blank', rel: 'noopener noreferrer' }
-            : {};
-          return (
-            <Tag key={p.name} className={`project-card ${p.accent}`} {...props}>
-              <span className="project-emoji">{p.emoji}</span>
-              <span className="project-name">{p.name}</span>
-              <span className="project-desc">{p.desc}</span>
-            </Tag>
-          );
-        })}
-      </div>
+      {unlocked ? (
+        <div className="projects-grid">
+          {projects.map((p) => {
+            const isLink = p.url;
+            const Tag = isLink ? 'a' : 'div';
+            const linkProps = isLink
+              ? { href: p.url, target: '_blank', rel: 'noopener noreferrer' }
+              : {};
+            return (
+              <Tag
+                key={p.name}
+                className={`project-card ${p.accent}${isLink ? ' card-live' : ''}`}
+                {...linkProps}
+              >
+                <span className="project-emoji">{p.emoji}</span>
+                <span className="project-name">{p.name}</span>
+                <span className="project-desc">{p.desc}</span>
+              </Tag>
+            );
+          })}
+        </div>
+      ) : (
+        <div className="projects-desc">
+          <p>📊 Life Dashboard — personal dashboard for habits, goals, and daily metrics.</p>
+          <p>⚽ World Cup — live tournament tracker I built to follow games with friends.</p>
+          <p>🕸️ Graph — interactive knowledge graph for notes and connections.</p>
+        </div>
+      )}
     </section>
   );
 }
